@@ -5,8 +5,7 @@
   </aside>
   
   <main>
-    {{status-update}}
-    <!-- {{chirps-list}} -->
+    {{status-update openComposeModal=(action 'openComposeModal')}}
     {{chirps-list chirps=model.chirps}}
   </main>
 </div>
