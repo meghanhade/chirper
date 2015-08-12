@@ -1,12 +1,12 @@
-<h1>Home</h1>
-
 <div class="page-container home-page">
   <aside class="left">
-    {{profile-glance}}
+    <!-- {{profile-glance}} -->
+    {{profile-glance user=model.user}}
   </aside>
   
   <main>
     {{status-update}}
-    {{chirps-list}}
+    <!-- {{chirps-list}} -->
+    {{chirps-list chirps=model.chirps}}
   </main>
 </div>
