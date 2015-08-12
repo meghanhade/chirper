@@ -7,7 +7,9 @@ var User = DS.Model.extend({
   numberOfFollowers: DS.attr('number'),
   aboutMe: DS.attr('string'),
   joinedAt: DS.attr('date'),
-  chirps: DS.hasMany('chirps', { async: true })
+  chirps: DS.hasMany('chirps', { async: true }),
+  followees: DS.hasMany('user', { async: true }),
+  followers: DS.hasMany('user', { async: true })
 });
 
 User.reopenClass({
@@ -20,7 +22,9 @@ User.reopenClass({
       numberOfFollowers: 5,
       aboutMe: 'I like making stuff.',
       joinedAt: new Date('2015-06-08T09:30:26'),
-      chirps: [1, 2]
+      chirps: [1, 2],
+      followees: [1],
+      followers: [1]
     }
   ]
 });
