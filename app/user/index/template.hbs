@@ -1,2 +1,5 @@
-<h2>Chirps</h2>
-{{outlet}}
+<!-- Remember that we made a chirps-list-component for the Home-page before? One of the great things with components is that they are reusable. And since the list of chirps on the profile-page looks exactly the same as the list of chirps on the home-page, it makes sense to just use the same component to render both! -->
+
+<main>
+  {{chirps-list chirps=model}}
+</main>
