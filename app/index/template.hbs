@@ -8,6 +8,9 @@
   </div>
 
   <div class="login-box">
+	{{#if errorMessage}}
+		<p class="error">{{errorMessage}}</p>
+	{{/if}}
     {{input placeholder="Username" value=username }}
     {{input type="password" placeholder="Password" value=password }}
 

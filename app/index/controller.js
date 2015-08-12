@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  valuesChanged: Ember.observer('username', 'password', function() {
+    this.set('errorMessage', false);
+  }),
   actions: {
     login: function() {
       var username = this.get('username');
@@ -9,7 +12,8 @@ export default Ember.Controller.extend({
       if (username === 'letme' && password === 'in') {
         this.transitionToRoute('home');
       } else {
-        sweetAlert('Oops!', 'Wrong username or password!', 'error');
+        // We replace our SweetAlert-function with a simple variable containing the error message
+  		this.set('errorMessage', 'Wrong username or password!');
       }
     }
   }
