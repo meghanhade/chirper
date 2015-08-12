@@ -1,0 +1,23 @@
+<div class="landing-photo"></div>
+
+<div class="page-container index">
+
+  <div class="text-wrapper">
+    <h1>Welcome to Chirper.</h1>
+    <p class="tagline">Chirper is a Twitter-clone Meghan built with Ember.js</p>
+  </div>
+
+  <div class="login-box">
+    {{input placeholder="Username" value=username }}
+    {{input type="password" placeholder="Password" value=password }}
+
+    <button class="signup">Sign up</button>
+
+    <!-- On the index page, we want the user to be able to log in with the username "letme" and the password "in", and then be sent to the Home-page. In all other cases, an error message will be shown.
+
+	Whenever we want to add actions like these on route templates, we need a controller -->
+
+    <button class="login" {{action 'login'}}>Log in</button>
+  </div>
+
+</div>
