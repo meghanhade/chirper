@@ -2,18 +2,19 @@
   <div class="page-container">
 
     <div class="logo"></div>
+	{{#if session.isAuthenticated}}
+	    <nav>
+		  {{#link-to "home"}}Home{{/link-to}}
 
-    <nav>
-	  {{#link-to "home"}}Home{{/link-to}}
+		  {{#link-to "user"}}
+		    <img class="avatar" src="/images/avatar.jpg" />
+		    {{session.currentUser.username}} 
+		  {{/link-to}}
 
-	  {{#link-to "user"}}
-	    <img class="avatar" src="/images/avatar.jpg" />
-	    {{user.username}}
-	  {{/link-to}}
-
-	  
-	  <button class="chirp" {{action 'toggleComposeModal'}}>Chirp</button>
-	</nav>
+		  
+		  <button class="chirp" {{action 'toggleComposeModal'}}>Chirp</button>
+		</nav>
+	{{/if}}
 
   </div>
 </header>

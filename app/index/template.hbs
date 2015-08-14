@@ -14,7 +14,7 @@
     {{input placeholder="Username" value=username }}
     {{input type="password" placeholder="Password" value=password }}
 
-    <button class="signup">Sign up</button>
+    <button class="signup" {{action 'signup'}}>Sign up</button>
 
     <!-- On the index page, we want the user to be able to log in with the username "letme" and the password "in", and then be sent to the Home-page. In all other cases, an error message will be shown.
 
